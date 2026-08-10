@@ -26,16 +26,18 @@ Open [http://localhost:3000](http://localhost:3000) — the simulation starts au
 
 ## Project Structure
 
+```
 lib/
-timeline.ts # scripted mock encounter (the "script")
-useSimulatedStream.ts # plays back the timeline as live state, via requestAnimationFrame
-types.ts # shared TypeScript types
+  timeline.ts             # scripted mock encounter (the "script")
+  useSimulatedStream.ts   # plays back the timeline as live state, via requestAnimationFrame
+  types.ts                # shared TypeScript types
 components/
-AmbientListener.tsx # transcript panel
-LiveCaseSheet.tsx # auto-filling case sheet
-RiyaWidget.tsx # floating agent indicator
-AudioVisualizer.tsx # fake waveform
-app/page.tsx # composes everything together
+  AmbientListener.tsx      # transcript panel
+  LiveCaseSheet.tsx        # auto-filling case sheet
+  RiyaWidget.tsx            # floating agent indicator
+  AudioVisualizer.tsx      # fake waveform
+app/page.tsx               # composes everything together
+```
 
 ## How It Works
 
