@@ -13,7 +13,7 @@ An ambient AI dashboard concept for the ER, built for NexovAI's frontend interns
 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS v4
-- No backend — mock data engine using `setInterval` + a scripted event timeline
+- No backend — mock data engine using `requestAnimationFrame` and a scripted event timeline
 
 ## Getting Started
 
