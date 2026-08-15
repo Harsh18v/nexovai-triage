@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NexovAI Triage Room
+
+An ambient AI dashboard concept for the ER, built for NexovAI's frontend internship assignment. Simulates a voice assistant (**RIYA**) that listens to a doctor-patient conversation and auto-fills a live case sheet in real time — no audio/backend required, driven entirely by a scripted mock timeline.
+
+## Features
+
+- **Ambient Listener** — live scrolling transcript with a simulated audio waveform
+- **Live Case Sheet** — vitals, demographics, and action items auto-populate as the "conversation" progresses, with a flash animation on update
+- **RIYA Widget** — persistent floating agent with 4 visual states: Idle, Listening, Processing, Alerting
+- Dark-mode clinical UI, built for a high-stress ER context
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS v4
+- No backend — mock data engine using `requestAnimationFrame` and a scripted event timeline
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — the simulation starts automatically.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+lib/
+  timeline.ts             # scripted mock encounter (the "script")
+  useSimulatedStream.ts   # plays back the timeline as live state, via requestAnimationFrame
+  types.ts                # shared TypeScript types
+components/
+  AmbientListener.tsx      # transcript panel
+  LiveCaseSheet.tsx        # auto-filling case sheet
+  RiyaWidget.tsx            # floating agent indicator
+  AudioVisualizer.tsx      # fake waveform
+app/page.tsx               # composes everything together
+```
 
-## Learn More
+## How It Works
 
-To learn more about Next.js, take a look at the following resources:
+A scripted timeline (`lib/timeline.ts`) defines every event — transcript lines, agent state changes, case sheet fields — each tagged with a timestamp. `useSimulatedStream` plays this back using `requestAnimationFrame`, comparing elapsed time each frame against the next due event, and exposes the results as React state that the UI components render.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Harsh Vishwakarma — [Portfolio](https://harsh-vishwakarma.vercel.app) · [GitHub](https://github.com/Harsh18v)
