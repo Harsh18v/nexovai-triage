@@ -33,11 +33,11 @@ export const timeline: TimelineEvent[] = [
   {
     t: 6800,
     kind: "transcript",
-    payload: { id: "l4", speaker: "Patient", text: "Anil Kulkarni, I'm 58." },
+    payload: { id: "l4", speaker: "Patient", text: "Rohan Mehta, I'm 36." },
   },
   { t: 8000, kind: "agent", payload: "processing" },
-  { t: 8500, kind: "field", payload: { section: "demographics", key: "name", label: "Patient Name", value: "Anil Kulkarni" } },
-  { t: 8900, kind: "field", payload: { section: "demographics", key: "age", label: "Age", value: "58" } },
+  { t: 8500, kind: "field", payload: { section: "demographics", key: "name", label: "Patient Name", value: "Rohan Mehta" } },
+  { t: 8900, kind: "field", payload: { section: "demographics", key: "age", label: "Age", value: "36" } },
   { t: 9100, kind: "agent", payload: "listening" },
   {
     t: 9800,

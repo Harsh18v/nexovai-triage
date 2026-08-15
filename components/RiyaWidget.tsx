@@ -14,11 +14,11 @@ export function RiyaWidget({ state }: { state: AgentState }) {
 
   return (
     <div
-      className="fixed w-88 top-4 right-148 z-50 flex items-center gap-3 rounded-full border border-border bg-surface-raised/90 backdrop-blur px-4 py-3 shadow-2xl"
+      className="flex w-1/2 items-center gap-3 rounded-full border border-slate-300 bg-white px-3 py-2.5 backdrop-blur-xl transition-colors duration-300 dark:border-zinc-700 dark:bg-zinc-900/80 sm:right-6"
       role="status"
       aria-live="polite"
     >
-      <div className="relative flex h-8 w-10 items-center justify-center">
+      <div className="relative flex h-9 w-9 items-center justify-center">
         {meta.ring && (
           <span
             className="absolute inline-flex h-full w-full rounded-full animate-pulse-ring"
@@ -26,19 +26,16 @@ export function RiyaWidget({ state }: { state: AgentState }) {
           />
         )}
         <span
-          className="relative inline-flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-mono font-semibold text-background transition-colors duration-500"
+          className="relative inline-flex h-8 w-8 items-center justify-center rounded-full tracking-widest text-[10px] font-semibold text-white transition-colors duration-500"
           style={{ backgroundColor: meta.color }}
         >
-          R
+          AI
         </span>
       </div>
-      <div className="pr-1">
-        <div className="text-sm font-medium leading-tight">RIYA</div>
-        <div
-          className="text-xs font-mono leading-tight transition-colors duration-500"
-          style={{ color: meta.color }}
-        >
-          {meta.label} · <span className="text-muted">{meta.sub}</span>
+      <div className="min-w-0 pr-1">
+        <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-800 dark:text-zinc-100">RIYA</div>
+        <div className="text-[12px] font-medium leading-tight text-slate-400 dark:text-zinc-300" style={{ color: meta.color }}>
+          {meta.label} · <span className="text-slate-400 dark:text-zinc-400">{meta.sub}</span>
         </div>
       </div>
     </div>
