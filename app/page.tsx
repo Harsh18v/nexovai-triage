@@ -90,7 +90,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid max-w-md grid-cols-2 gap-2 sm:max-w-lg sm:grid-cols-8 lg:max-w-none lg:grid-cols-4">
+            <div className="grid max-w-md grid-cols-2 gap-3 sm:max-w-lg sm:grid-cols-8 lg:max-w-none lg:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.label} className={`rounded-2xl border p-3 ${isDark ? "border-zinc-800 bg-zinc-900/80" : "border-slate-300 bg-white"}`}>
                   <div className={`text-[10px] font-medium uppercase tracking-[0.18em] ${isDark ? "text-zinc-400" : "text-slate-700"}`}>{stat.label}</div>
