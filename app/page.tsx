@@ -82,7 +82,6 @@ export default function Home() {
         <section className={`mb-6 overflow-hidden rounded-[28px] border p-5 shadow-[0_20px_50px_rgba(15,23,42,0.05)] backdrop-blur-xl sm:p-6 lg:p-7 ${isDark ? "border-zinc-800 bg-zinc-950/80 shadow-[0_20px_50px_rgba(0,0,0,0.32)]" : "border-slate-300 bg-white"}`}>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
-              <p>Patient name:</p>
               <h1 className={`text-3xl font-semibold tracking-tight sm:text-4xl ${isDark ? "text-white" : "text-slate-950"}`}>
                 Rohan Mehta
               </h1>
